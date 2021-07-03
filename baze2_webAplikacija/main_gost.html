@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--W3.CSS-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--JS-->
+  <script src="script.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--CSS-->
+  <title>Sustav za upravljanje hotelom</title>
+  <link rel='icon' href='favicon.ico' type='image/x-icon'>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+</head>
+<body>
+  <div class="w3-row w3-container">
+    <!--side-->
+    <div class="w3-container w3-col m0 l2"></div>
+    <!--end side-->
+    <!--main-->
+    <div class="w3-container w3-khaki  w3-col s12 m12 l8 w3-padding-32">
+      <div class="w3-card-2 w3-amber" style="padding-bottom:10px;">
+        <a title="Povratak na prijavu" href="index.html"><button style="line-height:50%;" type="button" name="back_button" class="w3-button w3-circle w3-black w3-large w3-margin-left w3-margin-top"><i style="margin-top:1px;" class="fas fa-arrow-left fa-2x"></i></button></a>
+        <h1 class="w3-center w3-padding-32"><b>REZERVACIJA SMJEŠTAJA</b></h1>
+
+        <!--Mjesto prebivališta-->
+        <div class="w3-container">
+          <i class="fas fa-map-marker-alt fa-2x"> <h2 style="display:inline-block">Mjesto prebivališta</h2></i>
+
+          <hr>
+          <!--Forma za mjestoPrebivalista -->
+          <form name="mP_forma" action="gost_mp-insert.php" method="POST" onsubmit=" return mjestoPrebivalista_provjera()">
+            <label>Država</label>
+            <input id="#mp-drzava" class="w3-input w3-margin-bottom" type="text" maxlength="50" autocomplete="on" placeholder="Unesite državu u kojoj boravite..." name="drzava" onchange="revert(this.id)">
+
+            <label>Grad</label>
+            <input id="#mp-grad" class="w3-input w3-margin-bottom" type="text" maxlength="50" autocomplete="on" placeholder="Unesite grad u kojem boravite..." name="grad" onchange="revert(this.id)">
+
+            <label>Poštanski broj</label>
+            <input id="#mp-postanski_broj" class="w3-input w3-margin-bottom" type="text" maxlength="50" autocomplete="on" placeholder="Unesite poštanski broj..." name="p_broj" onchange="revert(this.id)">
+
+            <label>Adresa</label>
+            <input id="#mp-adresa" class="w3-input w3-margin-bottom" type="text" maxlength="50" autocomplete="on" placeholder="Unesite vašu kućnu adresu i broj" name="adresa" onchange="revert(this.id)">
+            <p id="#mp-insert" class="mark">Molimo unesite podatke...</p>
+            <button class="w3-button w3-round-large w3-red w3-margin-bottom" type="submit">Potvrda</button>
+            </form>
+        </div>
+        <!--End Mjesto prebivališta-->
+        <!--Datum-->
+        <div class="w3-container">
+          <i class="fas fa-calendar-alt fa-2x"> <h2 style="display:inline-block">Datum</h2></i>
+          <hr>
+            <!--Forma za datum -->
+            <form name="datum_forma" action="gost_datum-insert.php" method="POST" onsubmit="return datum_provjera()">
+            <label>Datum dolaska</label>
+            <input id="#d-dolazak" class="w3-input w3-margin-bottom" type="date" name="datum_dolaska" onchange="revert(this.id)" >
+
+            <label>Datum odlaska</label>
+            <input id="#d-odlazak" class="w3-input w3-margin-bottom" type="date" name="datum_odlaska" onchange="revert(this.id)">
+            <button class="w3-button w3-round-large w3-red w3-margin-bottom" type="submit">Potvrda</button>
+            </form>
+            <p id="#d-insert" class="mark">Molimo unesite podatke...</p>
+
+        </div>
+        <!--End Datum-->
+        <!--Gost-->
+        <div class="w3-container">
+          <i class="fas fa-user-alt fa-2x"> <h2 style="display:inline-block">Gost</h2></i>
+          <hr>
+            <!--Forma za goste -->
+            <form name="gosti_forma" action="gost_gosti-insert.php" method="POST" onsubmit="return gost_provjera()">
+
+            <label>Ime</label>
+            <input name="g_ime" id="#g-ime" class="w3-input w3-margin-bottom" type="text" maxlength="20" autocomplete="on" placeholder="Upišite ime gosta koji dolazi..." onchange="revert(this.id)">
+
+            <label>Prezime</label>
+            <input name="g_prezime" id="#g-prezime" class="w3-input w3-margin-bottom" type="text" maxlength="20" autocomplete="on" placeholder="Upišite prezime gosta koji dolazi..." onchange="revert(this.id)">
+
+            <label>OIB</label>
+            <input name="g_oib" id="#g-oib" class="w3-input w3-margin-bottom" type="text" maxlength="30" autocomplete="on" placeholder="Upišite OIB gosta koji dolazi..." onchange="revert(this.id)">
+
+            <label>Broj osobne iskaznice</label>
+            <input name="g_osobna" id="#g-broj_osobne" class="w3-input w3-margin-bottom" type="text" maxlength="30" autocomplete="on" placeholder="Upišite broj osobne iskaznice gosta..." onchange="revert(this.id)">
+
+            <label>Datum rođenja</label>
+            <input name="g_datum_rodenja" id="#g-datum_rodenja" class="w3-input w3-margin-bottom" type="date" onchange="revert(this.id)">
+
+            <button class="w3-button w3-round-large w3-red w3-margin-bottom" type="submit">Potvrda</button>
+            </form>
+            <div class="w3-container w3-sand w3-margin-bottom gosti">
+              <h3>Gosti:</h3>
+              <hr>
+            </div>
+            <p class="mark">Broj gostiju: <b id="#broj_gostiju">0</b></p>
+
+        </div>
+
+
+        <!--End Gost-->
+        <!--Soba-->
+        <div class="w3-container">
+          <label>Osoba na koju glasi rezervacija</label>
+          <br>
+          <form name="soba_aranzman_du_forma" action="rezervacija.php" method="POST" onsubmit ="return rezervacija_provjera();">
+          <select class="w3-select w3-border w3-margin-bottom " id="booker_odabir" name= "booker_odabir">
+
+          </select>
+          <br>
+          <i class="fas fa-hotel fa-2x"> <h2 style="display:inline-block">Soba/Aranžman/Dodatne Usluge</h2></i>
+          <hr>
+
+            <label>Vrsta sobe</label>
+            <br>
+            <select id="#sobe" class="w3-select w3-border w3-margin-bottom" onchange="prikaz_soba(this.value); izracunCijene();">
+              <option value="1" selected>SGL - jednokrevetna</option>
+              <option value="2">DBL - dvokrevetna, 1 dupli krevet</option>
+              <option value="3">TWIN - dvokrevetna, 2 odvojena kreveta</option>
+              <option value="4">TRPL - trokrevetna</option>
+              <option value="5">QDPL - četverokrevetna</option>
+            </select>
+            <br>
+
+            <label>Odabir sobe</label>
+            <br>
+            <select id="#odabir_sobe" class="w3-select w3-border w3-margin-bottom" name="soba_odabir" onchange="izracunCijene();">
+            </select>
+            <br>
+
+            <label>Aranžman</label>
+            <br>
+
+            <select id="aranzman_select" class="w3-select w3-border w3-margin-bottom" name="aranzman" onchange="izracunCijene();">
+            </select>
+            <br>
+
+            <i class="fas fa-concierge-bell fa-lg"> <h3 style="display:inline-block"><u>Dodatne usluge</u></h3></i>
+
+            <div id="sekcija_dodatne_usluge" class="w3-row">
+            </div>
+
+            <div id="trajanje" class="w3-hide">0</div>
+            <div id="multiplikator" class="w3-hide">1</div>
+            <div id="odabrane_usluge" class="w3-hide">0</div>
+
+            <p class="w3-center"><button class="w3-button w3-round-large w3-black w3-margin-bottom w3-center" type="submit">Rezerviraj</button></p>
+            </form>
+          <!--</form>-->
+
+        </div>
+        <div class="sticky">
+          <div class="mark sticky">Ukupna cijena: <b id="#ukupna_cijena">0</b> kn</div>
+        </div>
+        <!--End Soba-->
+      </div>
+
+    </div>
+    <!--end main-->
+    <!--side-->
+    <div class="w3-container w3-col l2">
+    </div>
+    <!--end side-->
+  </div>
+  <div class="w3-row creators w3-amber w3-margin-top w3-center">
+    <p><b>Projekt - Baze podataka 2, FIPU</b></p>
+    <p><b>Tim 4</b> - Sustav za upravljanje hotelom</p>
+    <p>Web aplikaciju izradio Luka Blašković</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+
+.background_image{
+  background-color: #fdf5e6;
+  background-image: url(pozadina.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+body {
+  background-color: #fdf5e6;
+  background-image: url(pozadina.jpg);
+  background-repeat: repeat;
+  background-position: absolute;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+hr {
+  border-top: 2px solid black;
+}
+
+.mark {
+  background-color: lightyellow;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+  .alert-color-change {
+    background-color: rgb(255, 164, 164);
+  }
+  .sticky {
+    position: sticky;
+    bottom: 0;
+    margin: 10px;
+  }
+@media screen and (min-width: 991px) {
+  input, select {
+    width: 35% !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  input, select {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  input, select {
+    width: 100% !important;
+  }
+}
+
+.delete:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20px !important;
+}
+#polje_lozinka,#tekst_lozinka{
+  display: none;
+  margin: 0 auto;
+}
+.creators{
+  line-height: 8px;
+}

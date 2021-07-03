@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--W3.CSS-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--JS-->
+  <script src="script.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--CSS-->
+  <title>Sustav za upravljanje hotelom</title>
+  <link rel='icon' href='favicon.ico' type='image/x-icon'>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+</head>
+<body class="background_image">
+  <div class="w3-row w3-container ">
+    <!--side-->
+    <div class="w3-container w3-khaki w3-col m0 l2"></div>
+    <!--end side-->
+    <!--main-->
+    <div class="w3-container  w3-col s12 m12 l8 w3-padding-64">
+
+      <div class="w3-card-2 w3-amber w3-display-container">
+          <a title="Povratak na prijavu" href="index.html"><button style="line-height:50%;" type="button" name="back_button" class="w3-button w3-circle w3-black w3-large w3-margin-left w3-margin-top w3-display-topleft"><i style="margin-top:1px;" class="fas fa-arrow-left fa-2x"></i></button></a>
+        <h1 class="w3-center w3-padding-24"><b>Upute za korištenje korisničkog sučelja</b></h1>
+        <div class="w3-margin-left 	w3-margin-right">
+          <h3>Podjela</h3>
+          <p>Korisničko sučelje se sastoji od 2 dijela: <b>gost</b> i <b>djelatnik</b>. Prvi dio, gost, osmišljen je kao platforma za potencijalne goste hotela koji ondje mogu rezervirati smještaj.
+          Drugi dio je namijenjen djelatnicima hotela te sadrži razne informacije iz baze: prikaz soba, usluga, računa, rezervacija itd..</p>
+          <h3>Prijava</h3>
+          <p>Podaci za prijavu su povezani sa korisnicima kreiranim u bazi podataka</p>
+          <p>Za prijavu na gosta nije potreba lozinka</p>
+          <p><b>Lozinka</b> za prijavu na djelatnika je 'djelatnik'</p>
+          <h3>Gost</h3>
+          <p>Stranica se sastoji od niza raznih formi, ispunjavanjem formi se podaci spremaju u privremene tablice u bazu podataka</p>
+          <p>Privremene tablice također služe za ponovno čitanje iz baze i prikaz podataka koji su uneseni</p>
+          <p>Odabir sobe, dodatnih usluga, aranžmana nije ručno unesen, već se generira ovisno o količini podataka u bazi</p>
+          <p>Sve funkcije, okidači i procedure se izvode u bazi, a ne u PHP-u. PHP služi samo za pozivanje naredbi u bazi i slanje podataka putem formi. Tako primjerice
+          za izračun sezone se koristi funkcija izracun_sezone iz baze podataka ili za izračun trajanja boravka se koristi funkcija DATEDIFF().</p>
+          <h3>Rezervacija</h3>
+          <p>Nakon što se unesu svi podaci i klikne gumb 'rezerviraj', otvara se nova stranica gdje se čitaju svi podaci iz privremenih tablica i pregledno ispisuju, također se ispisuje ukupna cijena.</p>
+          <p>Tek nakon provjere podataka se pokreće transakcija u bazi koja izrađuje rezervaciju ako sve naredbe prođu u redu (zadovolje ograničena, pravila, okidače).</p>
+          <h3>Djelatnik</h3>
+          <p>Na stranici dijelatnika nalazi se mnoštvo tablica koje se također generiraju ovisno o podacima u bazi. To su sve tablice soba, aranžmana, dodatnih usluga i računa.</p>
+          <p>Za pregled računa se koriste podaci iz pogleda racun_prikaz, za sobe i dodatne usluge postoji mogućnost dodavanja novih.</p>
+          <p>Djelatnik također ima uvid u pristigle rezervacije za koje nije izrađen račun, takve rezervacije su označene crvenom bojom te djelatnik može kreirati račun upisivanjem ID-a, svog imena i prezimena.</p>
+          <h3>Napomena</h3>
+          <p>Neki neispravni podaci mogu proći spremljeni u privremene tablice te sučelje neće davati grešku, ali na samom kraju kod pokretanja transakcije, unos u samu bazu neće proći.</p>
+          <p>Također, klikom na gumb za nazad i ponovnom prijavom u željenu stranicu, sve privremene tablice se resetiraju i sučelje je spremno za novi unos.</p>
+          <h3>Korišteni alati i programski jezici:</h3>
+          <ul class="w3-ul w3-card-4 w3-khaki w3-hoverable">
+            <li>MySQL baza podataka i MySQL Workbench</li>
+            <li>Atom</li>
+            <li>HTML, CSS, Javascript</li>
+            <li>W3.CSS, Fontawesome, JQuery</li>
+            <li>PHP, mysqli driver</li>
+          </ul>
+          <br>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <!--end main-->
+    <!--side-->
+    <div class="w3-container w3-khaki w3-col l2"></div>
+    <!--end side-->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+Tim 4 - Sustav za upravljanje hotelom
+
+Upute za pokretanje korisničkog sučelja:
+
+1. Instalacija PHP-a (Za izradu i testiranje se koristila verzija 8.0.0)
+WINDOWS: https://www.youtube.com/watch?v=iW0B9NTId2g
+
+2. U datoteku C:\Users\ime_korisnika ubaciti datoteku baze2_webAplikacija
+
+3. Pokrenuti bazu podataka
+
+4. Pokrenuti localhost server u command promptu naredbom php -S localhost:4000
+
+5. Sučelje se otvara na webu preko URL-a : 
+http://localhost:4000/baze2_webAplikacija/index.html
+
+Gost - nema lozinke
+Root lozinka: root
+Djelatnik lozinka: djelatnik

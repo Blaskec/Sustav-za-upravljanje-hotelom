@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--W3.CSS-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--JS-->
+  <script src="script.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--CSS-->
+  <title>Sustav za upravljanje hotelom</title>
+  <link rel='icon' href='favicon.ico' type='image/x-icon'>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+</head>
+<body class="background_image">
+  <div class="w3-row w3-container ">
+    <!--side-->
+    <div class="w3-container w3-khaki w3-col m0 l2"></div>
+    <!--end side-->
+    <!--main-->
+    <div class="w3-container  w3-col s12 m12 l8 w3-padding-64">
+
+      <div class="w3-card-2 w3-amber w3-display-container">
+          <a title="Upute za korištenje" href="upute.html"><div class="w3-display-topright w3-margin-top	w3-margin-right	"><button class="w3-button w3-circle " style="padding: 0; border: none; background: none; line-height:50%;">
+            <i class="fas fa-question-circle fa-3x"></i></button></div></a>
+        <h1 class="w3-center w3-padding-24"><b>Molimo da se prijavite</b></h1>
+
+            <form class="w3-center" action="site.php" method="post"  onsubmit="return passCheck()">
+
+              <label>Odabir korisnika</label>
+              <br>
+              <select id="lista_korisnika" class="w3-select w3-border w3-margin-bottom" onchange="provjera_korisnika()" name="taskOption">
+                <option selected value="1">Gost</option>
+                <option value="2">Djelatnik</option>
+                <!--<option value="3">root</option>-->
+              </select>
+              <hr>
+
+              <label for="polje_lozinka" id="tekst_lozinka">Lozinka</label>
+              <input id="polje_lozinka" class="w3-input w3-margin-bottom" type="password" maxlength="50" autocomplete="on" placeholder="Upišite lozinku...">
+              <p class="w3-center"><button class="w3-button w3-round-large w3-black w3-margin-bottom w3-center" type="submit">Prijava</button></p>
+            </form>
+
+
+      </div>
+    </div>
+    <!--end main-->
+    <!--side-->
+    <div class="w3-container w3-khaki w3-col l2"></div>
+    <!--end side-->
+  </div>
+</body>
+
+</html>
