@@ -11,7 +11,7 @@ Web aplikacija i SQL baza podataka za rezerviranje smještaja u hotelu.
 -   Kristijan Žulić (kristijanzulic@gmail.com) - dokumentacija projekta
 
 ### Kratki opis funkcionalnosti
--SQL baza podataka sa svim funkcionalnostima za provjeru točnosti unosa podataka, provjera dostupnih soba, izračun turističke sezone, provjera slobodnih datuma.
+SQL baza podataka sa svim funkcionalnostima za provjeru točnosti unosa podataka, provjera dostupnih soba, izračun turističke sezone, provjera slobodnih datuma.
 - unos novih gostiju, odabir dodatnih hoteljerskih usluga, odabir dostupnih termina i automatski izračun cijene temeljem datuma.
 - transakcija koja provjerava sve podatke, okidači koji provjeravaju točnost unesenih podataka.
 - funkcionalnosti i za djelatnika: dodavanje/brisanje/ažuriranje soba, pregled svih računa, rezervacija, rezervacija bez izrađenog računa, pregled svih dodatnih usluga, asortimana, soba i sl. 
