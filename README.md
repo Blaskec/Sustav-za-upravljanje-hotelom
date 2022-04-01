@@ -1,4 +1,4 @@
-# "HotelManagement-php app"
+# hotelManagement-Database-App
 
 Web aplikacija i SQL baza podataka za rezerviranje smještaja u hotelu.
 
